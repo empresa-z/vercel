@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <nav className="rounded border-gray-200 bg-slate-700 px-2 py-2.5 dark:bg-gray-900 sm:px-4">
+        <nav className="border-gray-200 bg-slate-700 px-2 py-2.5 dark:bg-gray-900 sm:px-4">
           <div className="mx-auto flex flex-wrap items-center justify-between">
             <a href="https://flowbite.com/" className="flex items-center">
               <img src="https://digitaldunamis.com/wp-content/uploads/2022/07/Livester-Logo-Dark.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -46,8 +46,8 @@ export default function Home() {
           </div>
         </nav>
         <container className="inline-flex">
-          <aside className="w-1/5" aria-label="Sidebar">
-            <div className="h-screen overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
+          <aside className="aside-controls w-1/5" aria-label="Sidebar">
+            <div className="h-screen overflow-y-auto bg-gray-50 py-4 px-3 dark:bg-gray-800">
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
           </aside>
           <content className="w-3/5">
-            <div className="h-3/5 overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-500"></div>
+            <div className="h-3/5 overflow-y-auto bg-gray-50 py-4 px-3 dark:bg-gray-500"></div>
             <div className="content-footer h-2/5 dark:bg-gray-900">
               <div className="lineup-nav w-full overflow-y-auto rounded bg-gray-50 py-4 px-3 bg-transparent">
 
@@ -336,11 +336,11 @@ export default function Home() {
               </div>
             </div>
           </content>
-          <aside className="w-1/5">
-            <div className="h-screen overflow-y-auto rounded bg-gray-50 py-4 px-3 dark:bg-gray-800">
+          <aside className="aside-chat w-1/5">
+            <div className="h-full bg-gray-50 py-4 px-3 dark:bg-gray-800 w-full flex flex-col justify-between">
               <ul>
                 <li>
-                  <a href="#" className="flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                  <a href="#" className="flex h-full items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                     <svg aria-hidden="true" className="h-6 w-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                       <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
                       <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
@@ -349,14 +349,37 @@ export default function Home() {
                   </a>
                 </li>
               </ul>
+
+              <form className="p-2 pb-0 w-full">
+                <div class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+                  <div class="py-2 px-4 bg-white rounded-t-lg dark:bg-gray-800">
+                    <label for="comment" class="sr-only">Your comment</label>
+                    <textarea id="comment" rows="4" class="px-0 w-full text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required=""></textarea>
+                  </div>
+                  <div class="flex justify-between items-center py-2 px-3 border-t dark:border-gray-600">
+                    <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                      Enviar no chat
+                    </button>
+                    <div class="flex pl-0 space-x-1 sm:pl-2">
+                      <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Attach file</span>
+                      </button>
+                      <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Set location</span>
+                      </button>
+                      <button type="button" class="inline-flex justify-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path></svg>
+                        <span class="sr-only">Upload image</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
             </div>
           </aside>
         </container>
-        <footer>
-          <div className="w-full h-full rounded bg-gray-50 py-4 px-3 dark:bg-black">
-
-          </div>
-        </footer>
       </main>
 
     </div>
