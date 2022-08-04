@@ -1,9 +1,14 @@
 import Head from 'next/head'
+import * as fbq from '../lib/fpixel'
+import Link from 'next/link'
 import { Container } from 'postcss'
 
 export default function Home() {
+  // console.log('Created by Livester, the on and only real livecommerce marketplace. Developed for performance.'),
+  const handleClick = () => {
+    fbq.event('Purchase', { currency: 'BRL', value: 100 })
+  }
   return (
-    console.log('Created by Livester, the on and only real livecommerce marketplace. Developed for performance.'),
     <div>
       <Head>
         <title>Livester Motherfucker</title>
@@ -14,7 +19,7 @@ export default function Home() {
       <main>
         <nav className="border-gray-200 bg-slate-700 px-2 py-2.5 dark:bg-gray-900 sm:px-4">
           <div className="mx-auto flex flex-wrap items-center justify-between">
-            <a href="https://flowbite.com/" className="flex items-center">
+            <a href="https://digitaldunamis.com/" className="flex items-center">
               <img src="https://digitaldunamis.com/wp-content/uploads/2022/07/Livester-Logo-Dark.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
             </a>
             <button data-collapse-toggle="navbar-default" type="button" className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden" aria-controls="navbar-default" aria-expanded="false">
@@ -24,7 +29,7 @@ export default function Home() {
             <div className="hidden w-full md:block md:w-auto" id="navbar-default">
               <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium md:dark:bg-gray-900">
                 <li>
-                  <a href="#" className="md:text-white-700 block rounded bg-blue-700 py-2 pr-4 pl-3 text-white dark:text-white md:bg-transparent md:p-0" aria-current="page">Go Live</a>
+                  <a href="#" className="md:text-white-700 block rounded bg-blue-700 py-2 pr-4 pl-3 text-white dark:text-white md:bg-transparent md:p-0" aria-current="page" onClick={handleClick}>Go Live</a>
                 </li>
                 <li>
                   <a href="#" className="md:hover:text-white-700 block rounded py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:dark:hover:bg-transparent md:dark:hover:text-white">Catálogo</a>
